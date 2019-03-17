@@ -12,7 +12,8 @@ pipeline {
 
     stage('Build War File') {
       steps {
-          sh 'echo $pwd'
+	  sh 'export PATH=/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven_jenkins/bin:$PATH'
+          sh 'echo mvn -version'
       }
     }
     
@@ -24,7 +25,7 @@ pipeline {
 
     stage('TF Apply') {
       steps {
-          sh 'mvn -version'    
+          sh 'docker images'    
           }
     }
 
