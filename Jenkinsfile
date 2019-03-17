@@ -13,19 +13,19 @@ pipeline {
 
     stage('Build War File') {
       steps {
-          sh echo 'Done'
+          sh 'echo $pwd'
       }
     }
     
     stage('Edit Kube deploy') {
       steps {
-	sh mod.sh
+	sh 'sh /home/opc/mod.sh'
       }
     }
 
     stage('TF Apply') {
       steps {
-          sh mvn -version    
+          sh 'mvn -version'    
           }
     }
 
