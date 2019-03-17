@@ -13,8 +13,8 @@ pipeline {
 
     stage('Build War File') {
       steps {
-          mvn clean package
-          ls -al /var/lib/Jenkins/workspace/test/
+          sh mvn clean package
+          sh ls -al /var/lib/Jenkins/workspace/test/
       }
     }
     
