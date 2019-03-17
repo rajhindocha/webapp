@@ -10,21 +10,27 @@ pipeline {
       }
     }
 
-    stage('Build War File') {
+    stage('Maven Build') {
       steps {
-	  sh 'echo $pwd'
+	  sh 'sh maven_build.sh'
       }
     }
     
-    stage('Edit Kube deploy') {
+    stage('Add docker layer') {
       steps {
-	   sh 'sh mod.sh'
+	   sh 'sh add_docker_layer.sh'
       }
     }
 
-    stage('TF Apply') {
+    stage('Push to OCIR') {
       steps {
-          sh 'sudo docker images'    
+          sh 'sh ocir_push.sh'    
+          }
+    }
+	  
+    stage('OKE Deploy') {
+      steps {
+          sh 'sh kube_deply.sh'    
           }
     }
 
