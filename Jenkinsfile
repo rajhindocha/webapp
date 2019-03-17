@@ -19,7 +19,8 @@ pipeline {
     
     stage('Edit Kube deploy') {
       steps {
-	sh 'sh /home/opc/mod.sh'
+	   sh 'mvn -version'
+	   sh 'sudo sh /home/opc/mod.sh'
       }
     }
 
