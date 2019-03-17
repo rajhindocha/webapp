@@ -18,7 +18,7 @@ pipeline {
     
     stage('Edit Kube deploy') {
       steps {
-	   sh 'sudo sh /home/opc/mod.sh'
+	   sh 'sh mod.sh'
       }
     }
 
