@@ -13,8 +13,7 @@ pipeline {
 
     stage('Build War File') {
       steps {
-          sh mvn clean package
-          sh ls -al /var/lib/Jenkins/workspace/test/
+          sh echo 'Done'
       }
     }
     
@@ -26,7 +25,7 @@ pipeline {
 
     stage('TF Apply') {
       steps {
-          sh echo 'Done'      
+          sh mvn -version    
           }
     }
 
