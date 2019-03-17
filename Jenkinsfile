@@ -1,13 +1,12 @@
 pipeline {
 
   agent any
-
   stages {
 
     stage('Checkout') {
       steps {
 	checkout scm
-
+        sh 'export PATH=/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven_jenkins/bin:$PATH'
       }
     }
 
