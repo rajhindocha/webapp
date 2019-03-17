@@ -12,14 +12,13 @@ pipeline {
 
     stage('Build War File') {
       steps {
-	  sh 'export PATH=/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/maven_jenkins/bin:$PATH'
-          sh 'sudo mvn -version'
+	  sh 'echo $pwd'
       }
     }
     
     stage('Edit Kube deploy') {
       steps {
-	   sh 'sudo sh mod.sh'
+	   sh 'sh mod.sh'
       }
     }
 
