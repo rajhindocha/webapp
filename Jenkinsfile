@@ -30,7 +30,7 @@ pipeline {
 	  
     stage('OKE Deploy') {
       steps {
-          sh 'sh kube_deply.sh'    
+          sh 'sh kube_deploy.sh'    
           }
     }
 
