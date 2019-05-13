@@ -10,13 +10,13 @@ pipeline {
       }
     }
 
-    stage('Maven Build') {
+    stage('Maven Build and Test Application') {
       steps {
 	  sh 'sh maven_build.sh'
       }
     }
     
-    stage('Add docker layer') {
+    stage('Build Docker Image') {
       steps {
 	   sh 'sh add_docker_layer.sh'
       }
